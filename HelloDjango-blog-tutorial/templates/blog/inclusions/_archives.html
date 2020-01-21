@@ -1,0 +1,13 @@
+<div class="widget widget-recent-posts">
+    <h3 class="widget-title">归档</h3>
+    <ul>
+        {% for date in date_list %}
+            <li>
+                {# {% url %}这个模板标签的作用是解析视图函数 blog:archive 对应的url模式 #}
+                <a href="{% url 'blog:archive' date.year date.month %}">{{ date.year }} 年 {{ date.month }} 月</a>
+            </li>
+    {% empty %}
+        暂无归档！
+    {% endfor %}
+    </ul>
+</div>

@@ -1,0 +1,13 @@
+<div class="widget widget-recent-posts">
+    <h3 class="widget-title">分类模板</h3>
+    <ul>
+        {% for categoty in categoty_list %}
+            <li>
+                {# <span class="post-count">(13)</span> 显示的是该根类下的文章数目#}
+                <a href="{% url 'blog:categoty' categoty.pk %}">{{ categoty.name }} <span class="post-count">(*)</span></a>
+            </li>
+    {% empty %}
+        暂无归档！
+    {% endfor %}
+    </ul>
+</div>
